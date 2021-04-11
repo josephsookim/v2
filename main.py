@@ -21,11 +21,12 @@ csp = {
         '\'unsafe-inline\'',
         'cdnjs.cloudflare.com',
         'cdn.jsdelivr.net',
+        'fonts.googleapis.com'
     ],
     'font-src': [
         '\'self\'',
         'cdnjs.cloudflare.com',
-        'https://fonts.googleapis.com/'
+        'fonts.gstatic.com'
     ],
     'img-src': [
         '\'self\'',
