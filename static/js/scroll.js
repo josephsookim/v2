@@ -7,11 +7,11 @@ $("#education-button").click(function() {
 $("#work-button").click(function() {
     $('html, body').animate({
         scrollTop: $("#work").offset().top
-    }, 3000);
+    }, 2000);
 });
 
 $("#projects-button").click(function() {
     $('html, body').animate({
         scrollTop: $("#projects").offset().top
-    }, 4000);
+    }, 2000);
 });
