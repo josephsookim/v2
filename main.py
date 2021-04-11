@@ -15,7 +15,6 @@ csp = {
         'https://www.google-analytics.com',
         'https://ssl.google-analytics.com',
         'https://www.googletagmanager.com',
-        'cdnjs.cloudflare.com'
     ],
     'style-src': [
         '\'self\'',
