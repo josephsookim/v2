@@ -25,6 +25,7 @@ csp = {
     'font-src': [
         '\'self\'',
         'cdnjs.cloudflare.com',
+        'https://fonts.googleapis.com/'
     ],
     'img-src': [
         '\'self\'',
