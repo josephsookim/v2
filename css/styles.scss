@@ -1,0 +1,489 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: "Lato";
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+#sidenav {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: none;
+
+  ul {
+    list-style-type: none;
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+
+    li {
+      padding-bottom: 0.5em;
+    }
+  }
+}
+
+.fab {
+  transition: all 1.5s ease-in-out;
+  color: white;
+}
+
+.nav-container {
+  background-color: #000000;
+
+  a {
+    color: #ffffff;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+
+  .logo-text {
+    padding-left: 1em;
+    font-weight: bold;
+  }
+
+  nav {
+    float: right;
+
+    ul {
+      display: flex;
+
+      a {
+        display: block;
+        padding: 0 1em;
+      }
+    }
+  }
+}
+
+.hero {
+  background: black;
+  color: white;
+  display: grid;
+  text-align: center;
+  padding: 4em;
+}
+
+.hero-right {
+  display: none;
+}
+
+section {
+  padding: 4em 2em;
+  text-align: center;
+
+  .title {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5em;
+    font-size: 1.5em;
+  }
+}
+
+.education {
+  background: #d3d3d3;
+
+  .title {
+    color: #000000;
+  }
+
+  ul li {
+    padding: 2em;
+    border: solid #000000;
+    border-radius: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+.education-title {
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: -0.4em;
+  display: block;
+}
+
+.education-desc {
+  color: #000000;
+  font-size: 0.9em;
+  line-height: 2em;
+  font-weight: 500;
+}
+
+.work {
+  background: #ffffff;
+
+  .title {
+    color: #d3d3d3;
+  }
+}
+
+.work-container ul li {
+  padding: 2em;
+  border: solid #d3d3d3;
+  border-radius: 1em;
+  margin-bottom: 1em;
+}
+
+.work-title {
+  color: #d3d3d3;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: -0.4em;
+  display: block;
+}
+
+.work-desc {
+  color: #d3d3d3;
+  font-size: 0.9em;
+  line-height: 2em;
+  font-weight: 500;
+}
+
+.projects {
+  background: #000000;
+
+  .title {
+    color: #ffffff;
+  }
+}
+
+.project-container a img {
+  border-radius: 1em;
+  margin-bottom: 2em;
+  width: 50%;
+}
+
+.project-title {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: -0.4em;
+  display: block;
+}
+
+.project-desc {
+  color: #ffffff;
+  font-size: 0.9em;
+  line-height: 2em;
+  font-weight: 500;
+}
+
+.whiteboard {
+  display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .education,
+  .work,
+  .projects {
+    text-align: left;
+  }
+
+  .education ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+    text-align: center;
+  }
+
+  .education {
+    display: flex;
+  }
+
+  .project-container {
+    display: grid;
+    grid-template-columns: 40% auto;
+  }
+
+  .left,
+  .project-left {
+    display: grid;
+    place-content: center;
+  }
+
+  .project-container a img {
+    border-radius: 1em;
+    margin-bottom: 2em;
+    float: right;
+    width: 50%;
+  }
+
+  .right {
+    position: relative;
+    width: 60%;
+  }
+
+  .whiteboard {
+    display: unset;
+    width: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .arrow {
+    display: block;
+    position: absolute;
+    width: 0;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    font-size: 5rem;
+
+    margin: auto;
+  }
+
+  .mac-wrapper {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+  }
+
+  $codeLines: 26;
+
+  @keyframes writeLine {
+    0% {
+      clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+    }
+    100% {
+      clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+    }
+  }
+
+  @keyframes keydown {
+    0% {
+      fill-opacity: 0.1;
+    }
+    15% {
+      fill-opacity: 0.3;
+    }
+    30% {
+      fill-opacity: 0.1;
+    }
+  }
+
+  @keyframes appOpen {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .mac-wrapper {
+    width: 100%;
+    max-width: 500px;
+    padding: 0 20px;
+    svg {
+      height: auto;
+      #CodeEditorWindow {
+        display: none;
+      }
+    }
+    &.start {
+      #CodeEditorWindow {
+        display: block;
+        animation: 0.5s ease-out 0s 1 normal forwards appOpen,
+          0.5s ease-out #{$codeLines + 1}s 1 reverse forwards appOpen;
+        transform-origin: center center;
+      }
+      [id^="codeline"] {
+        clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+        animation: writeLine 1s linear forwards;
+      }
+
+      @for $i from 1 through $codeLines {
+        #codeline#{$i} {
+          animation-delay: #{$i}s;
+        }
+      }
+
+      @for $j from 1 to 19 {
+        #keyboard#{random(49)} {
+          animation-name: keydown;
+          animation-duration: 1s;
+          animation-delay: #{1000 + random(1000)}ms;
+          animation-iteration-count: $codeLines;
+        }
+      }
+
+      #keyboard-return {
+        animation-name: keydown;
+        animation-duration: 1s;
+        animation-delay: 2s;
+        animation-iteration-count: $codeLines;
+      }
+    }
+  }
+
+  .work {
+    margin-top: -4em;
+    padding-top: 5em;
+  }
+
+  .work-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .projects {
+    padding-top: 5em;
+  }
+
+  .project-container img {
+    margin-right: 2em;
+    max-width: 400px;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  #sidenav {
+    ul {
+      list-style-type: none;
+      padding-left: 1.25em;
+      padding-top: 0.75em;
+
+      li {
+        padding-bottom: 0.75em;
+      }
+    }
+  }
+
+  .hero {
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 66% auto;
+    background: unset;
+    padding: 0;
+
+    .content {
+      background: #000000;
+      padding: 6em 8em 6em 4em;
+      text-align: left;
+
+      h1 {
+        font-size: 4em;
+        line-height: 2em;
+      }
+    }
+  }
+
+  .hero-right {
+    display: unset;
+    position: relative;
+    color: black;
+    margin: auto;
+  }
+
+  .fa-code {
+    position: absolute;
+    font-size: 4em;
+    bottom: 5em;
+  }
+
+  .hero-arrow {
+    position: absolute;
+    font-size: 6em;
+    left: 0.2em;
+    bottom: 2em;
+  }
+
+  .fa-code-branch {
+    position: absolute;
+    font-size: 5em;
+    left: 0.2em;
+    bottom: 1em;
+  }
+
+  .left-down-arrow {
+    position: absolute;
+    font-size: 6em;
+    right: 0.5em;
+    bottom: 0.2em;
+    transform: scaleX(-1);
+  }
+
+  .right-down-arrow {
+    position: absolute;
+    font-size: 6em;
+    left: 1.25em;
+    bottom: 0.2em;
+  }
+
+  .fa-desktop {
+    position: absolute;
+    font-size: 7em;
+    right: 0.12em;
+    top: 0.4em;
+  }
+
+  .fa-mobile-alt {
+    position: absolute;
+    font-size: 7em;
+    left: 1.1em;
+    top: 0.4em;
+  }
+
+  .nav-container {
+    display: grid;
+    grid-template-columns: 66% auto;
+    background: unset;
+
+    header {
+      background: #000000;
+    }
+  }
+
+  header {
+    padding: 2em 2em 2em 4em;
+  }
+
+  section {
+    padding: 4em;
+  }
+}
+
+@media only screen and (min-width: 1550px) {
+  header {
+    padding: 2em 2em 2em 20em;
+  }
+
+  section {
+    padding: 6em 20em 4em 20em;
+  }
+
+  .hero .content {
+    padding: 9em 20em 6em 20em;
+  }
+}
