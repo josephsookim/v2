@@ -193,7 +193,20 @@ section {
   display: none;
 }
 
+.project-container img {
+  margin-right: 2em;
+  max-width: 200px;
+}
+
 @media only screen and (min-width: 800px) {
+  .project-title {
+    text-align: center;
+  }
+
+  .project-desc {
+    text-align: center;
+  }
+
   .education,
   .work,
   .projects {
@@ -363,7 +376,7 @@ section {
 
   .project-container img {
     margin-right: 2em;
-    max-width: 400px;
+    max-width: 300px;
   }
 }
 
